@@ -1,0 +1,147 @@
+/* ===== MAIN SECTION ===== */
+.home {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  padding: 0 10%;
+
+  background: linear-gradient(
+    135deg,
+    rgba(106, 17, 203, 0.08),
+    rgba(160, 68, 255, 0.02)
+  );
+
+  position: relative;
+  overflow: hidden;
+}
+
+/* ===== BACKGROUND ANIMATION ===== */
+.home::before {
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: rgba(106, 17, 203, 0.15);
+  filter: blur(120px);
+  top: -100px;
+  left: -100px;
+  animation: float 8s ease-in-out infinite;
+}
+
+.home::after {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: rgba(160, 68, 255, 0.15);
+  filter: blur(120px);
+  bottom: -100px;
+  right: -100px;
+  animation: float 10s ease-in-out infinite reverse;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(30px); }
+  100% { transform: translateY(0px); }
+}
+
+/* ===== TEXT CONTAINER ===== */
+.home-text {
+  z-index: 2;
+  max-width: 700px;
+}
+
+/* ===== TITLE ===== */
+.home-text h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  background: linear-gradient(135deg, #6a11cb, #a044ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  margin-bottom: 10px;
+
+  animation: fadeUp 1s ease forwards;
+}
+
+/* ===== SUBTITLE ===== */
+.home-text h2 {
+  font-size: 1.5rem;
+  color: #555;
+  margin-bottom: 30px;
+  animation: fadeUp 1.3s ease forwards;
+}
+
+/* ===== BUTTON CONTAINER ===== */
+.home-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+
+  animation: fadeUp 1.6s ease forwards;
+}
+
+/* ===== BUTTON BASE ===== */
+.btn {
+  padding: 12px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+
+  font-size: 0.95rem;
+  font-weight: 500;
+
+  transition: all 0.3s ease;
+}
+
+/* ===== OUTLINE BUTTON ===== */
+.btn-outline {
+  border: 2px solid #8a2be2;
+  color: #8a2be2;
+  background: transparent;
+}
+
+/* Hover effect */
+.btn-outline:hover {
+  background: linear-gradient(135deg, #6a11cb, #a044ff);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(106, 17, 203, 0.3);
+}
+
+/* Click effect */
+.btn-outline:active {
+  transform: scale(0.95);
+}
+
+/* ===== FADE ANIMATION ===== */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .home-text h1 {
+    font-size: 2.2rem;
+  }
+
+  .home-text h2 {
+    font-size: 1.2rem;
+  }
+
+  .home-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+}

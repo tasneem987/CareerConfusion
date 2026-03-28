@@ -1,0 +1,233 @@
+/* ===== Login.css with true floating labels ===== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.auth-container {
+  display: flex;
+  height: 100vh;
+}
+
+/* LEFT PANEL */
+.left-panel {
+  width: 50%;
+  background: linear-gradient(135deg, #6a11cb, #a044ff);
+  color: white;
+  padding: 80px;
+
+  display: flex;
+  flex-direction: column;
+
+  /* center vertically + horizontally */
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.logo-box {
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 20px;
+}
+.tags {
+  display: flex;
+  gap: 10px;
+  justify-content: center;   /* centers tags */
+  flex-wrap: wrap;
+}
+
+.left-panel p {
+  opacity: 0.9;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  max-width: 400px;
+}
+
+.left-panel h1 {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.left-panel p {
+  opacity: 0.9;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.tags {
+  display: flex;
+  gap: 10px;
+}
+
+.tag {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+/* RIGHT SIDE */
+.right-panel {
+  width: 50%;
+  background: #f4f5f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-wrapper {
+  width: 380px;
+}
+
+.form-wrapper h2 {
+  font-size: 28px;
+}
+
+.subtitle {
+  color: #777;
+  margin-bottom: 30px;
+}
+
+/* FLOATING INPUTS */
+.floating-group {
+  position: relative;
+  margin-bottom: 22px;
+}
+
+.floating-group input {
+  width: 100%;
+  padding: 16px 42px 16px 42px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 15px;
+  outline: none;
+  transition: border 0.25s, box-shadow 0.25s;
+}
+
+.floating-group label {
+  position: absolute;
+  left: 42px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+  font-size: 14px;
+  pointer-events: none;
+  transition: 0.25s ease;
+  background: transparent;
+}
+
+.floating-group input:focus {
+  border-color: #8a2be2;
+  box-shadow: 0 0 0 2px rgba(138, 43, 226, 0.15);
+}
+
+/* FLOAT ANIMATION */
+.floating-group input:focus + label,
+.floating-group.filled label {
+  top: -12px;
+  left: 0px;
+  font-size: 15px;
+  color: #8a2be2;
+  background: #f4f5f7;
+  padding: 0 4px;
+}
+
+.input-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #777;
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #6a11cb, #a044ff);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  box-shadow: 0 6px 16px rgba(106, 17, 203, 0.4);
+}
+
+.register {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.register a {
+  color: #8a2be2;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.message {
+  margin-top: 10px;
+  color: #e74c3c;
+}
+
+@media (max-width: 900px) {
+  .auth-container { flex-direction: column; }
+  .left-panel, .right-panel { width: 100%; }
+  .left-panel { padding: 40px; }
+}
+
+/* Make select align like input */
+.floating-group select {
+  width: 100%;
+  padding: 10px 10px 10px 35px; /* leave space for the icon */
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  appearance: none; /* remove default arrow style for uniform look */
+  background-color: #fff;
+}
+
+.floating-group select:focus {
+  outline: none;
+  border-color: #007bff; /* highlight on focus */
+}
+
+/* Position the icon inside the select field */
+.floating-group select + label {
+  top: -8px;  /* adjust label position */
+  font-size: 12px;
+  color: #666;
+}
+
+.floating-group select {
+  background: url('data:image/svg+xml;utf8,<svg fill="gray" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>') no-repeat right 10px center;
+  background-color: #fff;
+  background-size: 16px 16px;
+}
+
+/* Change color of first "Educational Level" option */
+.floating-group select option[value=""] {
+  color: #aaa;  /* gray placeholder text */
+}
+
