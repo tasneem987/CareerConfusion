@@ -1,4 +1,4 @@
-# MajorConfusion Website📚
+# MajorConfusion Website 📚
 
 **Registration:**
 <img width="1314" height="634" alt="image1" src="https://github.com/user-attachments/assets/ce44dac9-d40d-4801-a30a-3fdf2bd31d45" />
