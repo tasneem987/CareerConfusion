@@ -58,17 +58,23 @@ module.exports = db;
 // ---------------------------
 app.use("/images", express.static("public/images"));
 
-
-// ----- REGISTER -----
+// ----- REGISTER (FIXED: added logging, removed unnecessary validation order) -----
 app.post("/register", async (req, res) => {
   const { name, email, password, age, educational_level } = req.body;
 
+  // Log incoming data for debugging (remove in production if desired)
+  console.log("Register request body:", { name, email, age, educational_level });
+
+  // Validate all fields
   if (!name || !email || !password || !age || !educational_level) {
     return res.json({ success: false, message: "All fields are required" });
   }
 
   db.query("SELECT * FROM users WHERE email = ?", [email], async (err, results) => {
-    if (err) return res.json({ success: false, message: "Database error" });
+    if (err) {
+      console.error(err);
+      return res.json({ success: false, message: "Database error" });
+    }
 
     if (results.length > 0) {
       return res.json({ success: false, message: "Email already registered" });
@@ -83,7 +89,7 @@ app.post("/register", async (req, res) => {
       [name, email, hashedPassword, age, educational_level],
       (err2, result) => {
         if (err2) {
-          console.error(err2); // <-- very important for debugging
+          console.error("Registration INSERT error:", err2);
           return res.json({ success: false, message: "Registration failed" });
         }
 

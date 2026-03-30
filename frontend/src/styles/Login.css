@@ -107,7 +107,7 @@
 
 .floating-group input {
   width: 100%;
-  padding: 16px 42px 16px 42px;
+  padding: 16px 45px 16px 42px; /* extra space on right for eye */
   border-radius: 8px;
   border: 1px solid #ddd;
   font-size: 15px;
@@ -158,6 +158,9 @@
   transform: translateY(-50%);
   cursor: pointer;
   color: #777;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 button {
@@ -231,3 +234,23 @@ button:hover {
   color: #aaa;  /* gray placeholder text */
 }
 
+/* Style for select when empty (no value selected) */
+.floating-group select.empty-select {
+  color: #aaa; /* gray placeholder color */
+}
+
+/* When a value is selected, text becomes normal color */
+.floating-group select:not(.empty-select) {
+  color: #333; /* or whatever your normal text color is */
+}
+
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+  display: none;
+}
+
+input[type="password"]::-webkit-credentials-auto-fill-button {
+  visibility: hidden;
+  display: none !important;
+  pointer-events: none;
+}

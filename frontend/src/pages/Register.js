@@ -19,6 +19,18 @@ const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!name || !email || !password || !age || !education) {
+      setMessage("Please fill in all fields");
+      return;
+    }
+
+    const ageNum = parseInt(age, 10);
+    if (isNaN(ageNum) || ageNum < 10 || ageNum > 100) {
+      setMessage("Please enter a valid age (10–100)");
+      return;
+    }
+
     if (loading) return;
 
     setLoading(true);
@@ -26,12 +38,12 @@ const Register = () => {
 
     try {
       const res = await api.post("/register", {
-  name,
-  email,
-  password,
-  age,
-  educational_level: education,
-});
+        name,
+        email,
+        password,
+        age: ageNum,
+        educational_level: education,
+      });
 
       if (res.data.success) {
         setMessage("Registration successful! Redirecting...");
@@ -45,11 +57,6 @@ const Register = () => {
     } finally {
       setLoading(false);
     }
-
-    if (!name || !email || !password || !age || !education) {
-  setMessage("Please fill in all fields");
-  return;
-}
   };
 
   return (
@@ -103,40 +110,39 @@ const Register = () => {
               />
               <label>Email</label>
             </div>
-             
-             <div className={`floating-group ${age ? "filled" : ""}`}>
-  <User className="input-icon" size={18} />
-  <input
-    type="number"
-    value={age}
-    onChange={(e) => setAge(e.target.value)}
-    required
-    min="10"
-    max="100"
-  />
-  <label>Age</label>
-</div>
-             
-             {/* EDUCATIONAL LEVEL */}
-<div className={`floating-group ${education ? "filled" : ""}`}>
-  <GraduationCap className="input-icon" size={18} />
-  <select
-    value={education}
-    onChange={(e) => setEducation(e.target.value)}
-    required
-  >
-    <option value="" disabled selected hidden>
-      Educational Level
-    </option>
-    <option value="High School">High School</option>
-    <option value="Undergraduate">Undergraduate</option>
-    <option value="Bachelor">Bachelor</option>
-    <option value="Master">Master</option>
-    <option value="PhD">PhD</option>
-  </select>
-  <label></label>
-</div>
 
+            {/* AGE */}
+            <div className={`floating-group ${age ? "filled" : ""}`}>
+              <User className="input-icon" size={18} />
+              <input
+                type="number"
+                value={age}
+                onChange={(e) => setAge(e.target.value)}
+                required
+                min="10"
+                max="100"
+              />
+              <label>Age</label>
+            </div>
+
+            {/* EDUCATIONAL LEVEL - with placeholder styling */}
+            <div className={`floating-group ${education ? "filled" : ""}`}>
+              <GraduationCap className="input-icon" size={18} />
+              <select
+                value={education}
+                onChange={(e) => setEducation(e.target.value)}
+                required
+                className={!education ? "empty-select" : ""}
+              >
+                <option value="" disabled>Educational Level</option>
+                <option value="High School">High School</option>
+                <option value="Undergraduate">Undergraduate</option>
+                <option value="Bachelor">Bachelor</option>
+                <option value="Master">Master</option>
+                <option value="PhD">PhD</option>
+              </select>
+              <label></label>
+            </div>
 
             {/* PASSWORD */}
             <div className={`floating-group ${password ? "filled" : ""}`}>
@@ -173,4 +179,3 @@ const Register = () => {
 };
 
 export default Register;
-

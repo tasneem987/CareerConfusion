@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <section className="home">
       <div className="home-text">
-        <h1>Career Confusion</h1>
+        <h1>Major Confusion</h1>
         <h2>Find your future with confidence</h2>
 
         <div className="home-buttons">
