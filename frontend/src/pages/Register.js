@@ -67,7 +67,7 @@ const Register = () => {
           <GraduationCap size={28} />
         </div>
 
-        <h1>Career Confusion</h1>
+        <h1>Major Confusion</h1>
         <p>
           Navigate your future with confidence. Discover the right major, the
           best university, and your ideal career path in Lebanon.

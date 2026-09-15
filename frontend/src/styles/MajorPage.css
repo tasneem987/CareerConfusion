@@ -1,0 +1,288 @@
+/* 🌟 SAME WHITE MODERN THEME */
+.quiz-page {
+  min-height: 100vh;
+  display: flex;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(120,119,198,0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255,119,198,0.08) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(120,219,255,0.08) 0%, transparent 50%),
+    #f8fafc;
+  position: relative;
+  overflow: hidden;
+}
+
+.quiz-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    linear-gradient(45deg, transparent 48%, rgba(255,255,255,0.015) 50%, transparent 52%),
+    linear-gradient(-45deg, transparent 48%, rgba(255,255,255,0.015) 50%, transparent 52%);
+  background-size: 30px 30px;
+  animation: gridMove 30s linear infinite;
+}
+
+@keyframes gridMove {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(30px, 30px); }
+}
+
+/* 📱 FULL PAGE MAIN */
+.major-main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+}
+
+/* 💎 FULL HEIGHT CONTAINER */
+.major-container {
+  width: 100%;
+  max-width: 1400px;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  overflow-y: auto;
+  gap: 40px;
+}
+
+/* 🔙 CLEAN BACK BUTTON */
+.back-btn {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  width: 52px;
+  height: 52px;
+  background: #ffffff;
+  border: 2px solid #e5e7eb;
+  color: #374151;
+  border-radius: 16px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  z-index: 10;
+}
+
+.back-btn:hover {
+  background: #f8fafc;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+  border-color: #3b82f6;
+  color: #1d4ed8;
+}
+
+/* 🎯 HEADER */
+.major-header {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.emoji-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.emoji {
+  font-size: 48px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.major-emoji {
+  font-size: 72px;
+  filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.15));
+}
+
+.major-header h1 {
+  font-size: 3.2rem;
+  background: linear-gradient(135deg, #1e293b, #334155);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 800;
+  margin: 0;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.major-header p {
+  font-size: 1.25rem;
+  color: #64748b;
+  line-height: 1.7;
+  max-width: 700px;
+  margin: 0 auto;
+  font-weight: 400;
+}
+
+/* 📊 PERFECT GRID */
+.major-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 28px;
+  flex: 1;
+}
+
+/* 🎨 BEAUTIFUL INFO CARDS */
+.major-box {
+  background: #ffffff;
+  border: 1px solid #f1f5f9;
+  border-radius: 20px;
+  padding: 36px 32px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.major-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.6), transparent);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+
+.major-box:hover::before {
+  transform: scaleX(1);
+}
+
+.major-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 
+    0 24px 64px rgba(0, 0, 0, 0.15),
+    0 12px 32px rgba(0, 0, 0, 0.1);
+  border-color: #e0e7ff;
+}
+
+/* 🎨 COLORED TOP BORDERS */
+.cost-box::before { background: linear-gradient(90deg, transparent, #10b981, transparent); }
+.uni-box::before { background: linear-gradient(90deg, transparent, #3b82f6, transparent); }
+.skills-box::before { background: linear-gradient(90deg, transparent, #f59e0b, transparent); }
+.study-box::before { background: linear-gradient(90deg, transparent, #8b5cf6, transparent); }
+.careers-box::before { background: linear-gradient(90deg, transparent, #ef4444, transparent); }
+.salary-box::before { background: linear-gradient(90deg, transparent, #059669, transparent); }
+
+/* 📝 BOX CONTENT */
+.major-box h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: #1e293b;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.major-box h3 .emoji {
+  font-size: 28px;
+}
+
+.major-box p,
+.major-box li {
+  color: #4b5563;
+  font-size: 1rem;
+  line-height: 1.65;
+  margin-bottom: 12px;
+}
+
+.major-box ul {
+  padding-left: 24px;
+  margin: 0;
+  list-style: none;
+}
+
+.major-box li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+}
+
+.major-box li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: #3b82f6;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.major-box strong {
+  color: #1e293b;
+  font-weight: 700;
+}
+
+/* 🔄 LOADING */
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-size: 1.5rem;
+  color: #64748b;
+}
+
+/* 📱 RESPONSIVE PERFECTION */
+@media (max-width: 768px) {
+  .major-main {
+    padding: 15px;
+  }
+  
+  .major-container {
+    height: 95vh;
+    padding: 30px 20px;
+  }
+  
+  .major-header h1 {
+    font-size: 2.4rem;
+  }
+  
+  .major-emoji {
+    font-size: 56px;
+  }
+  
+  .major-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .major-box {
+    padding: 28px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .back-btn {
+    width: 48px;
+    height: 48px;
+    font-size: 16px;
+  }
+  
+  .emoji-title {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+}

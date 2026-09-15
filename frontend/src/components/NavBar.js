@@ -14,7 +14,7 @@ const NavBar = () => {
 
   return (
     <header>
-      <Link to="/" className="logo">CareerConfusion</Link>
+      <Link to="/" className="logo">MajorConfusion</Link>
 
       <ul className="navbar">
         <li><Link to="/">Home</Link></li>

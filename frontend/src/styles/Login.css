@@ -1,57 +1,40 @@
-/* ===== Login.css with true floating labels ===== */
-
+/* ===== RESET ===== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
+/* ===== LAYOUT ===== */
 .auth-container {
   display: flex;
   height: 100vh;
 }
 
-/* LEFT PANEL */
+/* ===== LEFT PANEL ===== */
 .left-panel {
   width: 50%;
-  background: linear-gradient(135deg, #6a11cb, #a044ff);
+  background: linear-gradient(135deg, #6c63ff, #4facfe);
   color: white;
-  padding: 80px;
 
   display: flex;
   flex-direction: column;
-
-  /* center vertically + horizontally */
-  align-items: center;
   justify-content: center;
-  text-align: center;
+
+  padding: 80px;
 }
 
 .logo-box {
   width: 60px;
   height: 60px;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 16px;
+  border-radius: 15px;
+  background: rgba(255,255,255,0.2);
 
   display: flex;
   align-items: center;
   justify-content: center;
-
-  margin-bottom: 20px;
-}
-.tags {
-  display: flex;
-  gap: 10px;
-  justify-content: center;   /* centers tags */
-  flex-wrap: wrap;
-}
-
-.left-panel p {
-  opacity: 0.9;
-  line-height: 1.6;
-  margin-bottom: 30px;
-  max-width: 400px;
+  margin-bottom: 25px;
 }
 
 .left-panel h1 {
@@ -61,88 +44,76 @@
 
 .left-panel p {
   opacity: 0.9;
+  max-width: 400px;
   line-height: 1.6;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
 
+/* ===== TAGS ===== */
 .tags {
   display: flex;
   gap: 10px;
+  flex-wrap: wrap;
 }
 
 .tag {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255,255,255,0.2);
   padding: 8px 14px;
   border-radius: 20px;
-  font-size: 14px;
+  font-size: 13px;
 }
 
-/* RIGHT SIDE */
+/* ===== RIGHT PANEL ===== */
 .right-panel {
   width: 50%;
   background: #f4f5f7;
+
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+/* ===== FORM ===== */
 .form-wrapper {
   width: 380px;
+  padding: 30px;
+  border-radius: 16px;
+
+  background: white;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
+/* HEADINGS */
 .form-wrapper h2 {
-  font-size: 28px;
+  font-size: 26px;
+  margin-bottom: 5px;
+  color: #222;
 }
 
 .subtitle {
-  color: #777;
-  margin-bottom: 30px;
+  color: #666;
+  margin-bottom: 25px;
 }
 
-/* FLOATING INPUTS */
+/* ===== INPUT GROUP ===== */
 .floating-group {
   position: relative;
-  margin-bottom: 22px;
+  margin-bottom: 18px;
 }
 
-.floating-group input {
+/* INPUT */
+.floating-group input,
+.floating-group select {
   width: 100%;
-  padding: 16px 45px 16px 42px; /* extra space on right for eye */
-  border-radius: 8px;
+  padding: 14px 40px 14px 38px;
+  border-radius: 10px;
   border: 1px solid #ddd;
-  font-size: 15px;
-  outline: none;
-  transition: border 0.25s, box-shadow 0.25s;
-}
-
-.floating-group label {
-  position: absolute;
-  left: 42px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #999;
   font-size: 14px;
-  pointer-events: none;
-  transition: 0.25s ease;
-  background: transparent;
+  outline: none;
+  background: white;
 }
 
-.floating-group input:focus {
-  border-color: #8a2be2;
-  box-shadow: 0 0 0 2px rgba(138, 43, 226, 0.15);
-}
-
-/* FLOAT ANIMATION */
-.floating-group input:focus + label,
-.floating-group.filled label {
-  top: -12px;
-  left: 0px;
-  font-size: 15px;
-  color: #8a2be2;
-  background: #f4f5f7;
-  padding: 0 4px;
-}
-
+/* ICON */
 .input-icon {
   position: absolute;
   left: 12px;
@@ -151,106 +122,172 @@
   color: #999;
 }
 
+/* LABEL */
+.floating-group label {
+  position: absolute;
+  left: 38px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #aaa;
+  font-size: 13px;
+  transition: 0.2s;
+  pointer-events: none;
+}
+
+/* FLOAT */
+.floating-group input:focus + label,
+.floating-group.filled label {
+  top: -8px;
+  font-size: 11px;
+  color: #6c63ff;
+  background: white;
+  padding: 0 5px;
+}
+
+/* SELECT FIX */
+.empty-select {
+  color: #aaa;
+}
+
+select:not(.empty-select) {
+  color: #222;
+}
+
+/* FOCUS */
+.floating-group input:focus,
+.floating-group select:focus {
+  border-color: #6c63ff;
+  box-shadow: 0 0 0 2px rgba(108, 99, 255, 0.15);
+}
+
+/* PASSWORD ICON */
 .toggle-password {
   position: absolute;
-  right: 12px;
+  right: 10px;
   top: 50%;
   transform: translateY(-50%);
   cursor: pointer;
   color: #777;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
+/* ===== BUTTON ===== */
 button {
   width: 100%;
   padding: 14px;
+  border-radius: 10px;
   border: none;
-  border-radius: 8px;
-  background: linear-gradient(135deg, #6a11cb, #a044ff);
+
+  background: linear-gradient(135deg, #6c63ff, #8e44ad);
   color: white;
-  font-size: 16px;
+  font-size: 15px;
+  font-weight: 500;
+
   cursor: pointer;
+  transition: 0.2s;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 button:hover {
-  box-shadow: 0 6px 16px rgba(106, 17, 203, 0.4);
+  opacity: 0.9;
 }
 
+/* ===== SPINNER ===== */
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top: 2px solid white;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ===== LINKS ===== */
 .register {
   margin-top: 15px;
   text-align: center;
+  font-size: 14px;
 }
 
 .register a {
-  color: #8a2be2;
+  color: #6c63ff;
   text-decoration: none;
   font-weight: 500;
 }
 
+/* ===== ERROR ===== */
 .message {
   margin-top: 10px;
   color: #e74c3c;
 }
 
+/* ===== SUCCESS ===== */
+.success-screen {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #f4f5f7;
+}
+
+.checkmark-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #6c63ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: pop 0.4s ease;
+}
+
+.checkmark {
+  width: 25px;
+  height: 12px;
+  border-left: 3px solid white;
+  border-bottom: 3px solid white;
+  transform: rotate(-45deg);
+  animation: draw 0.4s ease 0.2s forwards;
+  opacity: 0;
+}
+
+@keyframes draw {
+  to { opacity: 1; }
+}
+
+@keyframes pop {
+  from { transform: scale(0.6); }
+  to { transform: scale(1); }
+}
+
+/* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {
-  .auth-container { flex-direction: column; }
-  .left-panel, .right-panel { width: 100%; }
-  .left-panel { padding: 40px; }
+  .auth-container {
+    flex-direction: column;
+  }
+
+  .left-panel, .right-panel {
+    width: 100%;
+  }
+
+  .left-panel {
+    padding: 40px;
+  }
 }
 
-/* Make select align like input */
-.floating-group select {
-  width: 100%;
-  padding: 10px 10px 10px 35px; /* leave space for the icon */
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  appearance: none; /* remove default arrow style for uniform look */
-  background-color: #fff;
-}
-
-.floating-group select:focus {
-  outline: none;
-  border-color: #007bff; /* highlight on focus */
-}
-
-/* Position the icon inside the select field */
-.floating-group select + label {
-  top: -8px;  /* adjust label position */
+.password-hint {
+  display: flex;
+  align-items: center;
+  gap: 6px;
   font-size: 12px;
-  color: #666;
-}
-
-.floating-group select {
-  background: url('data:image/svg+xml;utf8,<svg fill="gray" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>') no-repeat right 10px center;
-  background-color: #fff;
-  background-size: 16px 16px;
-}
-
-/* Change color of first "Educational Level" option */
-.floating-group select option[value=""] {
-  color: #aaa;  /* gray placeholder text */
-}
-
-/* Style for select when empty (no value selected) */
-.floating-group select.empty-select {
-  color: #aaa; /* gray placeholder color */
-}
-
-/* When a value is selected, text becomes normal color */
-.floating-group select:not(.empty-select) {
-  color: #333; /* or whatever your normal text color is */
-}
-
-input[type="password"]::-ms-reveal,
-input[type="password"]::-ms-clear {
-  display: none;
-}
-
-input[type="password"]::-webkit-credentials-auto-fill-button {
-  visibility: hidden;
-  display: none !important;
-  pointer-events: none;
+  margin-top: -5px;
+  margin-bottom: 14px;
+  opacity: 0.8;
 }

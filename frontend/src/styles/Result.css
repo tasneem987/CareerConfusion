@@ -1,0 +1,250 @@
+/* 🌟 SAME WHITE MODERN THEME AS QUIZ */
+.quiz-page {
+  min-height: 100vh;
+  display: flex;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(120,119,198,0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255,119,198,0.08) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(120,219,255,0.08) 0%, transparent 50%),
+    #f8fafc;
+  position: relative;
+  overflow: hidden;
+}
+
+.quiz-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    linear-gradient(45deg, transparent 48%, rgba(255,255,255,0.015) 50%, transparent 52%),
+    linear-gradient(-45deg, transparent 48%, rgba(255,255,255,0.015) 50%, transparent 52%);
+  background-size: 25px 25px;
+  animation: gridMove 25s linear infinite;
+}
+
+@keyframes gridMove {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(25px, 25px); }
+}
+
+/* 📱 FULL PAGE MAIN */
+.result-main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+}
+
+/* 💎 FULL HEIGHT CONTAINER */
+.result-container {
+  width: 100%;
+  max-width: 700px;
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+/* 🎯 TITLE */
+.result-container h2 {
+  font-size: 2.2rem;
+  color: #1e293b;
+  font-weight: 700;
+  margin: 0;
+  text-align: center;
+}
+
+/* 🏆 HERO TOP CARD */
+.top-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 24px;
+  padding: 45px 40px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 
+    0 30px 80px rgba(0, 0, 0, 0.12),
+    0 12px 35px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.top-card h3 {
+  font-size: 1.2rem;
+  color: #64748b;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.top-card h1 {
+  font-size: 2.8rem;
+  color: #1e293b;
+  margin: 0 0 8px 0;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.top-card p {
+  font-size: 1.3rem;
+  color: #3b82f6;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* 📊 RESULTS GRID */
+.results-list {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  flex: 1;
+  max-height: 300px;
+  overflow-y: auto;
+  padding: 10px 0;
+}
+
+/* 🎯 RESULT CARDS */
+.result-card {
+  background: #ffffff;
+  border: 1px solid #f1f5f9;
+  border-radius: 16px;
+  padding: 24px;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.result-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 
+    0 16px 40px rgba(0, 0, 0, 0.12),
+    0 8px 25px rgba(0, 0, 0, 0.08);
+  border-color: #e0e7ff;
+}
+
+.result-card h3 {
+  font-size: 1.25rem;
+  color: #1e293b;
+  margin: 0 0 16px 0;
+  font-weight: 600;
+}
+
+.result-card p {
+  font-size: 0.95rem;
+  color: #64748b;
+  margin: 8px 0 0 0;
+  font-weight: 500;
+}
+
+/* 📊 PROGRESS BAR */
+.bar {
+  height: 10px;
+  background: #f1f5f9;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 16px 0;
+  border: 1px solid #e2e8f0;
+}
+
+.fill {
+  height: 100%;
+  background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+/* 🔘 ACTION BUTTONS */
+.action-buttons {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+  max-width: 500px;
+  padding-top: 20px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.retake-btn, .home-btn {
+  flex: 1;
+  padding: 16px 24px;
+  border: 2px solid #e5e7eb;
+  border-radius: 14px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.retake-btn {
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  color: white;
+  border-color: #3b82f6;
+}
+
+.retake-btn:hover {
+  background: linear-gradient(135deg, #1d4ed8, #1e40af);
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.35);
+  transform: translateY(-2px);
+}
+
+.home-btn {
+  background: #ffffff;
+  color: #374151;
+}
+
+.home-btn:hover {
+  border-color: #3b82f6;
+  color: #1d4ed8;
+  transform: translateY(-2px);
+}
+
+/* 📱 RESPONSIVE */
+@media (max-width: 768px) {
+  .result-main {
+    padding: 15px;
+  }
+  
+  .result-container {
+    height: 90vh;
+    gap: 24px;
+  }
+  
+  .result-container h2 {
+    font-size: 1.8rem;
+  }
+  
+  .top-card {
+    padding: 35px 25px;
+  }
+  
+  .top-card h1 {
+    font-size: 2.2rem;
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .result-container {
+    height: 95vh;
+    padding: 0 10px;
+  }
+}

@@ -36,3 +36,138 @@
     transform: rotate(360deg);
   }
 }
+/* ⭐ Small circular star button */
+.save-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  width: 20px;
+  height: 20px;
+
+  border-radius: 50%;
+  border: none;
+
+  background: linear-gradient(135deg, #4facfe, #8e44ad);
+  color: white;
+
+  font-size: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+  flex: none;
+
+  cursor: pointer;
+}
+
+.save-btn:hover {
+  transform: scale(1.1);
+}
+.majors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.major-card {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: 0.3s;
+
+  position: relative; /* 🔥 REQUIRED */
+}
+
+.major-card:hover {
+  transform: translateY(-5px);
+}
+
+.remove-btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 12px;
+  color: red;
+}
+.card-top {
+  background: none !important;
+}
+.sidebar {
+  width: 230px;
+  height: 100vh;
+  padding: 20px;
+  background: #f7f8fc;
+  border-right: 1px solid #eee;
+
+  display: flex;
+  flex-direction: column; /* 🔥 important */
+}
+
+/* push logout to bottom */
+
+/* 🔥 MODAL OVERLAY */
+/* 🔥 DARK BACKGROUND */
+/* 🔥 FORCE CENTER MODAL */
+/* 🔥 FULL SCREEN DARK BACKGROUND */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  background: rgba(0, 0, 0, 0.5);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 9999;
+}
+
+/* 🔥 CENTERED BOX */
+.modal {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+
+  width: 320px;
+  text-align: center;
+
+  box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+}
+
+/* STACK BUTTONS */
+.modal-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+/* BUTTONS */
+.modal-buttons button {
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* CANCEL */
+.cancel {
+  background: linear-gradient(135deg, #4facfe, #8e44ad);
+  opacity: 0.7;
+  color: white;
+}
+
+/* LOGOUT */
+.confirm {
+  background: linear-gradient(135deg, #4facfe, #8e44ad);
+  color: white;
+}

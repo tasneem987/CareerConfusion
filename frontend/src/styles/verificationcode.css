@@ -1,0 +1,202 @@
+/* ===== VERIFY OTP - SCOPED CSS ===== */
+.verification-page * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+.verification-page {
+  display: flex;
+  height: 100vh;
+}
+
+/* ===== LEFT PANEL ===== */
+.verification-page .left-panel {
+  width: 50%;
+  background: linear-gradient(135deg, #6c63ff, #4facfe);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px;
+}
+
+.verification-page .logo-box {
+  width: 60px;
+  height: 60px;
+  border-radius: 15px;
+  background: rgba(255,255,255,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.verification-page .left-panel h1 {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.verification-page .left-panel p {
+  opacity: 0.9;
+  max-width: 400px;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+/* ===== RIGHT PANEL ===== */
+.verification-page .right-panel {
+  width: 50%;
+  background: #f4f5f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== FORM ===== */
+.verification-page .form-wrapper {
+  width: 380px;
+  padding: 30px;
+  border-radius: 16px;
+  background: white;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* HEADINGS */
+.verification-page .form-wrapper h2 {
+  font-size: 26px;
+  margin-bottom: 5px;
+  color: #222;
+}
+
+.verification-page .form-wrapper p {
+  color: #666;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.verification-page .form-wrapper p:last-of-type {
+  font-weight: 500;
+  color: #333;
+  word-break: break-all;
+  margin-bottom: 25px;
+}
+
+/* ===== FORM INPUT ===== */
+.verification-page .form-wrapper form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.verification-page .form-wrapper input {
+  width: 100%;
+  padding: 14px 20px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  letter-spacing: 4px;
+  outline: none;
+  background: white;
+  transition: all 0.2s ease;
+}
+
+.verification-page .form-wrapper input:focus {
+  border-color: #6c63ff;
+  box-shadow: 0 0 0 2px rgba(108, 99, 255, 0.15);
+}
+
+/* ===== BUTTONS ===== */
+.verification-page button {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  border: none;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.verification-page .primary-btn {
+  background: linear-gradient(135deg, #6c63ff, #8e44ad);
+  color: white;
+}
+
+.verification-page .primary-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.verification-page .secondary-btn {
+  background: transparent;
+  color: #6c63ff;
+  border: 2px solid #6c63ff;
+}
+
+.verification-page .secondary-btn:hover {
+  background: #6c63ff;
+  color: white;
+  transform: translateY(-1px);
+}
+
+/* ===== MESSAGES ===== */
+.verification-page .form-wrapper p:last-child {
+  margin-top: 15px;
+  padding: 12px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.verification-page .success-message {
+  background: rgba(108, 99, 255, 0.1);
+  color: #6c63ff;
+  border: 1px solid rgba(108, 99, 255, 0.2);
+}
+
+.verification-page .error-message {
+  background: rgba(231, 76, 60, 0.1);
+  color: #e74c3c;
+  border: 1px solid rgba(231, 76, 60, 0.2);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .verification-page {
+    flex-direction: column;
+  }
+
+  .verification-page .left-panel, 
+  .verification-page .right-panel {
+    width: 100%;
+  }
+
+  .verification-page .left-panel {
+    padding: 40px;
+  }
+
+  .verification-page .form-wrapper {
+    width: 90%;
+    max-width: 380px;
+    margin: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .verification-page .form-wrapper {
+    padding: 25px 20px;
+  }
+  
+  .verification-page .form-wrapper h2 {
+    font-size: 22px;
+  }
+}
