@@ -1,4 +1,4 @@
- # Career Confusion 📚
+ # 📚 Career Confusion 
 
 ### Career Guidance & Major Recommendation System
 
