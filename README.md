@@ -1,10 +1,13 @@
-# 🧭 Career Confusion
+> # Career Confusion 📚
 
 ### Career Guidance & Major Recommendation System
 
 **Career Confusion** is a web-based career guidance platform designed for students in Lebanon. It helps students discover suitable university majors and career paths based on their **interests, skills, personality, and career preferences**.
 
-![Major Compass](./path-to-your-project-image.png)
+## 📸 Project Screenshots
+
+<img width="1350" height="635" alt="Screenshot 2026-06-02 232118" src="https://github.com/user-attachments/assets/0f52060c-7f8b-425e-8946-d6f3b77f3d30" />
+
 
 ## ✨ Features
 
