@@ -99,7 +99,9 @@ Personalized Recommendations
 Developed as a **Senior Project** at **Lebanese International University (LIU)**.
 
 **Program:** BSc in Computer Science and Information Technology
+
 **Supervisor:** Dr. Hassan Al Zammar
+
 **Team:** Batoul Shadkhan & Tasneem Chaheen
 
 ---
