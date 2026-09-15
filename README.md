@@ -87,8 +87,11 @@ Personalized Recommendations
 ## 💻 Technologies
 
 **Frontend:** React.js, JavaScript, HTML5, CSS3
+
 **Backend:** Node.js
+
 **Database:** MySQL
+
 **Tools:** XAMPP, Visual Studio Code
 
 ## 🎓 Academic Project
